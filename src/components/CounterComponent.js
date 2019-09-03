@@ -13,13 +13,13 @@ class CounterComponent extends React.Component {
         <View style={styles.bodyView}>
           <Button
             style={styles.buttonsView}
-            onPress={() => {this.props.onIncrement()}}
+            onPress={() => {this.props.onIncrement(20)}}
             title="Increment +"
           />
           <View style={{paddingHorizontal: 10}} />
           <Button
           style={styles.buttonsView}
-            onPress={() => {this.props.onDecrement()}}
+            onPress={() => {this.props.onDecrement(1)}}
             title="Decrement -"
           />
         </View>

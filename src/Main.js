@@ -6,34 +6,28 @@
  * @flow
  */
 
-import React, {Fragment} from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-} from 'react-native';
 import {connect} from 'react-redux';
 
 import CounterComponent from './components/CounterComponent';
-import {increaseAction , decreaseAction } from './store/actions';
+import {increaseAction, decreaseAction} from './store/actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    times: state.counter  ? state.counter : 0,
+    times: state.counter ? state.counter : 0,
   };
 };
 
-
-const mapDispatchToProps = (dispatch) =>  {
+const mapDispatchToProps = dispatch => {
   return {
-    onIncrement: (inc) => dispatch(increaseAction(inc)),
+    onIncrement: inc => dispatch(increaseAction(inc)),
 
-   onDecrement: (dec) => dispatch(decreaseAction(dec)),
+    onDecrement: dec => dispatch(decreaseAction(dec)),
   };
- 
-
 };
 
-
-const Main = connect(mapStateToProps, mapDispatchToProps)(CounterComponent);
+const Main = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(CounterComponent);
 
 export default Main;
